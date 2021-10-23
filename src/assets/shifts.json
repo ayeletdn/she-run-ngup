@@ -22,7 +22,7 @@
     "action": "add",
     "value": {
       "how": "b",
-      "where": [
+      "polygon": [
         {
           "x": 138.9,
           "y": 176.3
@@ -46,7 +46,7 @@
     "action": "add",
     "value": {
       "how": "m",
-      "where": [
+      "polygon": [
         {
           "x": 138.9,
           "y": 152.8
@@ -69,8 +69,8 @@
   {
     "action": "add",
     "value": {
-      "how": "m",
-      "where": [
+      "how": "t",
+      "polygon": [
         {
           "x": 138.9,
           "y": 129.3

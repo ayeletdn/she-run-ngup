@@ -1,4 +1,4 @@
-import { IShape, Wizdom } from '.';
+import { IShape, Wisdom } from '.';
 
 export interface IShift {
   action: 'glamorize' | 'remove' | 'add';
@@ -18,7 +18,7 @@ export class ShapeShifter {
     this.shifts = shifts;
   }
 
-  shift(wizdom: Wizdom): void {
+  shift(wizdom: Wisdom): void {
     if (!wizdom || !wizdom.glamorize || !wizdom.add || !wizdom.remove) {
       console.error('ShapeShifter, shift, unexpected wizdom');
       return;

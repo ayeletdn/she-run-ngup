@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Wizdom } from '.';
+import { Wisdom } from '.';
 import { IShape } from '.';
 import { IShift, ShapeShifter } from '.';
 
@@ -12,10 +12,10 @@ import { IShift, ShapeShifter } from '.';
 export class TeleportService {
   constructor(private http: HttpClient) {}
 
-  getWizdom(): Observable<Wizdom> {
+  getWizdom(): Observable<Wisdom> {
     return this.http
-      .get<IShape[]>('/assets/wizdom.json')
-      .pipe(map((data) => new Wizdom(data)));
+      .get<IShape[]>('/assets/PolygonsOfWisdom.json')
+      .pipe(map((data) => new Wisdom(data)));
   }
 
   shapeShift(): Observable<ShapeShifter> {

@@ -1,13 +1,13 @@
-export interface IWhere {
+export interface IPolygon {
   x: number;
   y: number;
 }
 
-export class Where {
+export class Polygon {
   private x: number;
   private y: number;
 
-  constructor(point: IWhere) {
+  constructor(point: IPolygon) {
     this.x = point.x;
     this.y = point.y;
   }

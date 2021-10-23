@@ -1,12 +1,12 @@
-import { IWhere, Where } from './where.class';
+import { IPolygon, Polygon } from './polygon.class';
 
 export interface IShape {
   how: string;
-  where: IWhere[];
+  polygon: IPolygon[];
 }
 
 export class Shape {
-  private _points: Where[];
+  private _points: Polygon[];
   public _class: string;
 
   constructor(shape: IShape) {
@@ -15,7 +15,7 @@ export class Shape {
     }
 
     this._class = shape.how;
-    this._points = shape.where?.map((point) => new Where(point)) || [];
+    this._points = shape.polygon?.map((point) => new Polygon(point)) || [];
   }
 
   glamorize(glamour: string) {

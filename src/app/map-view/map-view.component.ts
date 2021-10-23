@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { delay, switchMapTo, tap } from 'rxjs/operators';
-import { Wizdom } from '../classes';
+import { ShapeShifter, Wisdom } from '../classes';
 import { TeleportService } from '../classes/teleport.service';
 
 @Component({
@@ -9,19 +9,21 @@ import { TeleportService } from '../classes/teleport.service';
   styleUrls: ['./map-view.component.scss'],
 })
 export class MapViewComponent implements OnInit {
-  @Input() wizdom: Wizdom;
+  wisdom: Wisdom;
+  @HostListener('click')
+  onClick() {
+    this.shift();
+  }
 
   constructor(private teleport: TeleportService) {}
 
   ngOnInit(): void {
+    this.teleport.getWizdom().subscribe((wizdom) => (this.wisdom = wizdom));
+  }
+
+  shift(): void {
     this.teleport
-      .getWizdom()
-      .pipe(
-        tap((wizdom) => (this.wizdom = wizdom)),
-        delay(4000),
-        switchMapTo(this.teleport.shapeShift()),
-        tap((shifter) => shifter.shift(this.wizdom))
-      )
-      .subscribe();
+      .shapeShift()
+      .subscribe((shifter) => shifter.shift(this.wisdom));
   }
 }

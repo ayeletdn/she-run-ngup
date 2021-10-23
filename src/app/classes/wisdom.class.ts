@@ -1,6 +1,6 @@
 import { Shape, IShape } from './shape.class';
 
-export class Wizdom {
+export class Wisdom {
   shapes: Shape[];
 
   constructor(shapes: IShape[]) {

@@ -9,8 +9,7 @@ export class Wisdom {
      * You don't know what's happening "outsize" your own little world/class
      */
     if (!shapes || !Array.isArray(shapes)) {
-      console.error('new Wizdom was called with invalid shapes');
-      return;
+      throw new TypeError('Unexpected list of shapes');
     }
 
     this.shapes = shapes.map((shape) => new Shape(shape));
@@ -22,20 +21,20 @@ export class Wisdom {
      * Log your errors! Throw exceptions if needed
      */
     if (!this.shapes) {
-      console.error('Wizdom add has no shapes');
+      console.error('Wisdom add has no shapes');
       return this.shapes;
     }
 
     // We didn't get a shape, nothing to do
     if (!ishape) {
-      console.error('Wizdom, add: ishape is null or undefined');
+      console.error('Wisdom, add: ishape is null or undefined');
       return this.shapes;
     }
 
     // We got an invalid index
     // undefined IS a valid index
     if (index !== undefined && typeof index !== 'number') {
-      console.error(`Wizdom, add: index is not a number ${index}`);
+      console.error(`Wisdom, add: index is not a number ${index}`);
       return this.shapes;
     }
 
@@ -58,20 +57,20 @@ export class Wisdom {
 
   remove(index: number): Shape[] {
     if (!this.shapes) {
-      console.error('Wizdom remove has no shapes');
+      console.error('Wisdom remove has no shapes');
       return this.shapes;
     }
 
     // We got an invalid index
     if (index !== undefined && typeof index !== 'number') {
-      console.error(`Wizdom, remove: index is not a number ${index}`);
+      console.error(`Wisdom, remove: index is not a number ${index}`);
       return this.shapes;
     }
 
     // Index out of range
     if (index !== undefined && this.shapes.length < index) {
       console.error(
-        `Wizdom, remove: index ${index} out of range ${this.shapes.length}`
+        `Wisdom, remove: index ${index} out of range ${this.shapes.length}`
       );
       return this.shapes;
     }
@@ -88,26 +87,26 @@ export class Wisdom {
 
   glamorize(value: string, index: number): Shape[] {
     if (!this.shapes) {
-      console.error('Wizdom glamorize has no shapes');
+      console.error('Wisdom glamorize has no shapes');
       return this.shapes;
     }
 
     // We got an invalid index
     if (typeof index !== 'number') {
-      console.error(`Wizdom, glamorize: index is not a number: ${index}`);
+      console.error(`Wisdom, glamorize: index is not a number: ${index}`);
       return this.shapes;
     }
 
     // Index out of range
     if (this.shapes.length < index) {
       console.error(
-        `Wizdom, glamorize: index ${index} out of range ${this.shapes.length}`
+        `Wisdom, glamorize: index ${index} out of range ${this.shapes.length}`
       );
       return this.shapes;
     }
 
     if (typeof value !== 'string') {
-      console.error(`Wizdom, glamorize: value is not a string ${value}`);
+      console.error(`Wisdom, glamorize: value is not a string ${value}`);
       return this.shapes;
     }
 

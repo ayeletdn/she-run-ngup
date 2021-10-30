@@ -12,7 +12,7 @@ import { IShift, ShapeShifter } from '.';
 export class TeleportService {
   constructor(private http: HttpClient) {}
 
-  getWizdom(): Observable<Wisdom> {
+  getWisdom(): Observable<Wisdom> {
     return this.http
       .get<IShape[]>('/assets/PolygonsOfWisdom.json')
       .pipe(map((data) => new Wisdom(data)));

@@ -2,7 +2,7 @@ import { IShape, Wisdom } from '.';
 
 export interface IShift {
   action: 'glamorize' | 'remove' | 'add';
-  value: string | number | IShape;
+  value: string | IShape;
   index?: number;
 }
 
@@ -18,25 +18,25 @@ export class ShapeShifter {
     this.shifts = shifts;
   }
 
-  shift(wizdom: Wisdom): void {
-    if (!wizdom || !wizdom.glamorize || !wizdom.add || !wizdom.remove) {
-      console.error('ShapeShifter, shift, unexpected wizdom');
+  shift(wisdom: Wisdom): void {
+    if (!wisdom || !wisdom.glamorize || !wisdom.add || !wisdom.remove) {
+      console.error('ShapeShifter, shift, unexpected wisdom');
       return;
     }
 
-    // for each shift instruction make a change to wizdom
+    // for each shift instruction make a change to wisdom
     this.shifts.forEach((shift: IShift) => {
       switch (shift.action) {
         case 'glamorize':
-          wizdom.glamorize(shift.value as string, shift.index);
+          wisdom.glamorize(shift.value as string, shift.index);
           break;
 
         case 'add':
-          wizdom.add(shift.value as IShape, shift.index);
+          wisdom.add(shift.value as IShape, shift.index);
           break;
 
         case 'remove':
-          wizdom.remove(shift.index);
+          wisdom.remove(shift.index);
           break;
 
         default:

@@ -18,7 +18,7 @@ export class MapViewComponent implements OnInit {
   constructor(private teleport: TeleportService) {}
 
   ngOnInit(): void {
-    this.teleport.getWizdom().subscribe((wizdom) => (this.wisdom = wizdom));
+    this.teleport.getWisdom().subscribe((wisdom) => (this.wisdom = wisdom));
   }
 
   shift(): void {

@@ -1,12 +1,12 @@
-import { IPolygon, Polygon } from './polygon.class';
+import { IPoint, Point } from './point.class';
 
 export interface IShape {
   how: string;
-  polygon: IPolygon[];
+  polygon: IPoint[];
 }
 
 export class Shape {
-  private _points: Polygon[];
+  private _polygon: Point[];
   public _class: string;
 
   constructor(shape: IShape) {
@@ -15,7 +15,7 @@ export class Shape {
     }
 
     this._class = shape.how;
-    this._points = shape.polygon?.map((point) => new Polygon(point)) || [];
+    this._polygon = shape.polygon?.map((point) => new Point(point)) || [];
   }
 
   glamorize(glamour: string) {
@@ -23,7 +23,7 @@ export class Shape {
   }
 
   get points(): string {
-    return this._points.map((p) => p.pair).join(' ');
+    return this._polygon.map((p) => p.pair).join(' ');
   }
 
   get glamour(): string {

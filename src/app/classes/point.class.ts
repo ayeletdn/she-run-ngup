@@ -1,13 +1,13 @@
-export interface IPolygon {
+export interface IPoint {
   x: number;
   y: number;
 }
 
-export class Polygon {
+export class Point {
   private x: number;
   private y: number;
 
-  constructor(point: IPolygon) {
+  constructor(point: IPoint) {
     this.x = point.x;
     this.y = point.y;
   }

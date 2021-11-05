@@ -1,6 +1,5 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
-import { delay, switchMapTo, tap } from 'rxjs/operators';
-import { ShapeShifter, Wisdom } from '../classes';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { Wisdom } from '../classes';
 import { TeleportService } from '../classes/teleport.service';
 
 @Component({

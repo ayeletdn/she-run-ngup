@@ -4,10 +4,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MapViewComponent } from './map-view/map-view.component';
+import { WisdomComponent } from './wisdom/wisdom.component';
 
 @NgModule({
-  declarations: [AppComponent, MapViewComponent],
+  declarations: [AppComponent, WisdomComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

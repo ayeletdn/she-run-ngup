@@ -3,11 +3,11 @@ import { Wisdom } from '../classes';
 import { TeleportService } from '../classes/teleport.service';
 
 @Component({
-  selector: 'app-map-view',
-  templateUrl: './map-view.component.svg',
-  styleUrls: ['./map-view.component.scss'],
+  selector: 'app-wisdom',
+  templateUrl: './wisdom.component.svg',
+  styleUrls: ['./wisdom.component.scss'],
 })
-export class MapViewComponent implements OnInit {
+export class WisdomComponent implements OnInit {
   wisdom: Wisdom;
   @HostListener('click')
   onClick() {
